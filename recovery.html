@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ExamMesh | Recovery & Verification</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar appbar">
+    <a class="brand" href="index.html"><span class="brand-mark">E</span><span>Exam<span>Mesh</span></span></a>
+    <div class="page-heading"><span class="muted">RECOVERY CONSOLE</span><strong>Synchronization & Integrity</strong></div>
+    <a class="btn btn-small btn-secondary" href="admin.html">← Dashboard</a>
+  </header>
+
+  <main class="recovery-page">
+    <div class="dashboard-head">
+      <div><div class="eyebrow">FAILURE RECOVERY</div><h1>Reconstruct the examination state.</h1><p>Queued events are synchronized, reconciled and cryptographically verified.</p></div>
+      <div id="recoveryBadge" class="status-pill"><span class="dot"></span> Awaiting Recovery</div>
+    </div>
+
+    <section class="pipeline glass-card">
+      <div class="pipeline-node" data-step="1"><span>01</span><strong>Local Events</strong><small>Candidate device</small></div>
+      <div class="pipeline-arrow">↓</div>
+      <div class="pipeline-node" data-step="2"><span>02</span><strong>Center Edge</strong><small>Continuity layer</small></div>
+      <div class="pipeline-arrow">↓</div>
+      <div class="pipeline-node" data-step="3"><span>03</span><strong>Sync Queue</strong><small>Ordered events</small></div>
+      <div class="pipeline-arrow">↓</div>
+      <div class="pipeline-node" data-step="4"><span>04</span><strong>Central Server</strong><small>Restored</small></div>
+      <div class="pipeline-arrow">↓</div>
+      <div class="pipeline-node" data-step="5"><span>05</span><strong>Reconciliation</strong><small>State merge</small></div>
+      <div class="pipeline-arrow">↓</div>
+      <div class="pipeline-node" data-step="6"><span>06</span><strong>Verification</strong><small>Hash chain</small></div>
+    </section>
+
+    <section class="recovery-controls glass-card">
+      <div>
+        <span class="eyebrow">RECOVERY ENGINE</span>
+        <h2 id="recoveryTitle">Infrastructure status</h2>
+        <p id="recoveryDescription">Restore the central server from the Admin Dashboard, then run recovery.</p>
+      </div>
+      <button id="recoverBtn" class="btn btn-primary">↻ Run Recovery</button>
+    </section>
+
+    <section class="recovery-grid">
+      <div class="glass-card progress-card">
+        <div class="card-title">Recovery Activity <span id="progressPercent">0%</span></div>
+        <div class="progress-track"><span id="progressBar"></span></div>
+        <div id="activityList" class="activity-list">
+          <div class="activity pending">Waiting to begin...</div>
+        </div>
+      </div>
+
+      <div class="glass-card recovered-card">
+        <div class="card-title">Recovered State</div>
+        <div class="recovered-number" id="recoveredEvents">0</div>
+        <p>Events reconstructed into the examination session.</p>
+        <div class="state-line"><span>Questions preserved</span><strong id="questionsRecovered">0/5</strong></div>
+        <div class="state-line"><span>Integrity</span><strong id="integrityState">Pending</strong></div>
+      </div>
+    </section>
+
+    <section class="glass-card audit-card">
+      <div class="section-title"><div><span class="eyebrow">TAMPER-EVIDENT AUDIT</span><h2>Event History</h2></div><div id="auditStatus" class="audit-status">Verification pending</div></div>
+      <div id="auditTable" class="audit-table">
+        <div class="audit-empty">Recovery must complete before event history can be verified.</div>
+      </div>
+    </section>
+
+    <section id="successPanel" class="success-panel hidden">
+      <div class="success-icon">✓</div>
+      <div><span class="eyebrow">RECOVERY COMPLETE</span><h2>Exam State Recovered</h2><p>All queued events were synchronized and the event chain passed integrity verification.</p></div>
+      <a href="exam.html" class="btn btn-primary">Return to Examination →</a>
+    </section>
+  </main>
+  <script src="js/recovery.js"></script>
+</body>
+</html>

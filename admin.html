@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ExamMesh | Admin Control</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar appbar">
+    <a class="brand" href="index.html"><span class="brand-mark">E</span><span>Exam<span>Mesh</span></span></a>
+    <div class="page-heading"><span class="muted">CONTROL CENTER</span><strong>Infrastructure Dashboard</strong></div>
+    <a class="btn btn-small btn-secondary" href="exam.html">Candidate View</a>
+  </header>
+
+  <main class="dashboard">
+    <div class="dashboard-head">
+      <div><div class="eyebrow">LIVE INFRASTRUCTURE</div><h1>ExamMesh Control Center</h1><p>Simulate failure and observe how examination state survives.</p></div>
+      <div class="live-badge"><span class="dot online"></span> Demo Environment</div>
+    </div>
+
+    <section class="metric-grid">
+      <div class="metric glass-card" id="centralCard"><span>☁ CENTRAL SERVER</span><strong id="centralStatus">ONLINE</strong><small id="centralDetail">Primary infrastructure available</small></div>
+      <div class="metric glass-card"><span>▣ CENTER EDGE</span><strong class="good">ONLINE</strong><small>Continuity layer operational</small></div>
+      <div class="metric glass-card"><span>◉ ACTIVE CANDIDATES</span><strong>24</strong><small>Across 3 examination centers</small></div>
+      <div class="metric glass-card"><span>⇄ PENDING EVENTS</span><strong id="pendingMetric">0</strong><small>Waiting for synchronization</small></div>
+    </section>
+
+    <section class="admin-grid">
+      <div class="glass-card control-card">
+        <div class="section-title"><div><span class="eyebrow">INFRASTRUCTURE CONTROL</span><h2>Failure Simulation</h2></div><span class="control-icon">⚙</span></div>
+        <p class="muted">Trigger a controlled central-server failure. The candidate session remains active and responses move into local continuity storage.</p>
+        <button id="failureBtn" class="btn btn-danger full">⚠ Simulate Central Server Failure</button>
+        <button id="restoreBtn" class="btn btn-success full">↻ Restore Central Server</button>
+        <div id="controlMessage" class="control-message">System is operating normally.</div>
+      </div>
+
+      <div class="glass-card state-card">
+        <div class="section-title"><div><span class="eyebrow">SYSTEM STATE</span><h2>Resilience Monitor</h2></div></div>
+        <div class="state-line"><span>Candidate State</span><strong class="good">● PRESERVED</strong></div>
+        <div class="state-line"><span>Edge Availability</span><strong class="good">● ONLINE</strong></div>
+        <div class="state-line"><span>Local Event Store</span><strong id="eventStoreState">EMPTY</strong></div>
+        <div class="state-line"><span>Last Synchronization</span><strong id="lastSync">Just now</strong></div>
+      </div>
+    </section>
+
+    <section class="glass-card incident-card">
+      <div class="section-title"><div><span class="eyebrow">OBSERVABILITY</span><h2>Incident Log</h2></div><span id="incidentCount" class="count-badge">0 events</span></div>
+      <div id="incidentLog" class="incident-log">
+        <div class="empty-log">No incidents. System operating normally.</div>
+      </div>
+    </section>
+
+    <div class="next-step">
+      <div><strong>Ready for recovery?</strong><span>Restore the infrastructure, then open the recovery console.</span></div>
+      <a class="btn btn-primary" href="recovery.html">Open Recovery Console →</a>
+    </div>
+  </main>
+  <script src="js/admin.js"></script>
+</body>
+</html>

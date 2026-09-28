@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ExamMesh | Candidate Examination</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar appbar">
+    <a class="brand" href="index.html"><span class="brand-mark">E</span><span>Exam<span>Mesh</span></span></a>
+    <div class="exam-title"><span class="muted">EXAMINATION</span><strong>Computer Science Fundamentals</strong></div>
+    <a class="btn btn-small btn-secondary" href="admin.html">Admin</a>
+  </header>
+
+  <div id="continuityBanner" class="continuity-banner hidden">
+    <div class="warning-icon">!</div>
+    <div>
+      <strong>CONTINUITY MODE ACTIVE</strong>
+      <p>Central server unavailable. Your responses are being stored locally and will synchronize automatically when connectivity is restored.</p>
+    </div>
+  </div>
+
+  <main class="exam-layout">
+    <section class="exam-main">
+      <div class="candidate-strip glass-card">
+        <div class="candidate">
+          <div class="avatar">SM</div>
+          <div><span class="muted">CANDIDATE</span><strong>Saurav Mishra</strong><small>ID: EXM-24017</small></div>
+        </div>
+        <div class="connection-state" id="connectionState">
+          <span class="dot online"></span>
+          <div><strong>Connected</strong><small>Response securely synchronized</small></div>
+        </div>
+      </div>
+
+      <div class="question-card glass-card">
+        <div class="question-meta">
+          <span>QUESTION <b id="questionNumber">01</b> OF 05</span>
+          <span id="saveText">✓ Saved</span>
+        </div>
+        <h2 id="questionText"></h2>
+        <div id="options" class="options"></div>
+        <div class="question-actions">
+          <button id="prevBtn" class="btn btn-secondary">← Previous</button>
+          <button id="nextBtn" class="btn btn-primary">Next →</button>
+        </div>
+      </div>
+    </section>
+
+    <aside class="exam-sidebar">
+      <div class="glass-card timer-card">
+        <span class="muted">TIME REMAINING</span>
+        <strong id="timer">29:59</strong>
+        <div class="timer-line"><span id="timerProgress"></span></div>
+      </div>
+
+      <div class="glass-card navigator">
+        <div class="card-title"><span>Question Navigator</span><span id="answeredCount">0/5</span></div>
+        <div id="questionNav" class="question-nav"></div>
+        <div class="legend"><span><i class="answered"></i> Answered</span><span><i></i> Unanswered</span></div>
+      </div>
+
+      <div class="glass-card event-store">
+        <div class="card-title">Local Event Store <span class="pulse-dot"></span></div>
+        <div class="store-row"><span>Events Pending Sync</span><strong id="pendingEvents">0</strong></div>
+        <div class="store-row"><span>Session State</span><strong class="good">Preserved</strong></div>
+        <div class="store-row"><span>Storage</span><strong>Local</strong></div>
+      </div>
+    </aside>
+  </main>
+  <script src="js/exam.js"></script>
+</body>
+</html>
